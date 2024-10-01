@@ -276,7 +276,7 @@ print(funny_checkerboard(5))  # attendu: [[1. 0. 1. 0. 1.]
 
 # %%
 def mean(arr):
-    
+    return np.mean(arr)
 
 
 # %% [markdown]
@@ -287,7 +287,7 @@ def mean(arr):
 
 # %%
 def sum_odd_columns(arr):
-    pass  # 👈 Insérez le code ici
+    return np.sum(arr[:,1::2])
 
 
 print(sum_odd_columns(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: 15
@@ -301,7 +301,9 @@ print(sum_odd_columns(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: 
 
 # %%
 def max_per_line(arr):
-    pass  # 👈 Insérez le code ici
+    n,_=arr.shape
+    result=np.array([np.max(arr[i,:]) for i in range(n)])
+    return result
 
 
 print(max_per_line(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: [3 6 9]
@@ -314,7 +316,11 @@ print(max_per_line(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: [3 
 
 # %%
 def min_per_column(arr):
-    pass  # 👈 Insérez le code ici
+    n,_=arr.shape
+    result=np.array([np.min(arr[i,:]) for i in range(n)])
+    return result
 
 
 print(min_per_column(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: [1 2 3]
+
+# %%
